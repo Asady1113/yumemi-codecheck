@@ -12,7 +12,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var repositoryArray: [[String: Any]]=[]
+    var repositoryArray: [[String: Any]] = []
     
     var searchTask: URLSessionTask?
     var searchWord: String!
@@ -24,12 +24,14 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
         //初期のテキストを表示
         searchBar.text = "GitHubのリポジトリを検索できるよー"
+        
         searchBar.delegate = self
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         // ↓初期のテキストを削除するコード
         searchBar.text = ""
+        
         return true
     }
     
@@ -46,10 +48,14 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         //検索ワードが入っているなら
         if searchWord.count != 0 {
             searchUrl = "https://api.github.com/search/repositories?q=\(searchWord!)"
+            
             searchTask = URLSession.shared.dataTask(with: URL(string: searchUrl)!) { (data, result, error) in
+                
                 if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
+                    
                         if let items = object["items"] as? [[String: Any]] {
                             self.repositoryArray = items
+                            
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
@@ -73,6 +79,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return repositoryArray.count
     }
     
@@ -83,6 +90,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         cell.textLabel?.text = repo["full_name"] as? String ?? ""
         cell.detailTextLabel?.text = repo["language"] as? String ?? ""
         cell.tag = indexPath.row
+        
         return cell
         
     }

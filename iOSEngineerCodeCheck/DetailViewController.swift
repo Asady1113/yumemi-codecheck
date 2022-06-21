@@ -34,6 +34,8 @@ class DetailViewController: UIViewController {
         watcherCountLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
         forkCountLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
         issueCountLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+        
+        
         getOwnerImage()
         
     }
@@ -46,12 +48,17 @@ class DetailViewController: UIViewController {
         titleLabel.text = repo["full_name"] as? String
         
         if let owner = repo["owner"] as? [String: Any] {
+            
             if let imgURL = owner["avatar_url"] as? String {
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
+                
+                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
+                    
                     let img = UIImage(data: data!)!
+                    
                     DispatchQueue.main.async {
                         self.ownerImageView.image = img
                     }
+                    
                 }.resume()
             }
         }
