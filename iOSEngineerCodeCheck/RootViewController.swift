@@ -22,24 +22,28 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //初期のテキストを表示
         searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
+        // ↓初期のテキストを削除するコード
         searchBar.text = ""
         return true
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //テキストが変更されたときはサーチをキャンセルする
         searchTask?.cancel()
     }
     
+    //検索ボタンが押されたら
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchWord = searchBar.text!
         
+        //検索ワードが入っているなら
         if searchWord.count != 0 {
             searchUrl = "https://api.github.com/search/repositories?q=\(searchWord!)"
             searchTask = URLSession.shared.dataTask(with: URL(string: searchUrl)!) { (data, result, error) in
@@ -52,7 +56,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
                         }
                     }
                 }
-        // これ呼ばなきゃリストが更新されません
+        //リクエストを開始するために必要
         searchTask?.resume()
         }
         
@@ -60,6 +64,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        //DetailViewControllerへの値わたし
         if segue.identifier == "Detail"{
             let detailVC = segue.destination as! DetailViewController
             detailVC.rootVC = self
@@ -83,8 +88,9 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
+        // タップされたcellの番号を代入
         selectedIndex = indexPath.row
+        //画面遷移
         performSegue(withIdentifier: "Detail", sender: self)
         
     }

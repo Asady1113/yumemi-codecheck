@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //RootViewControllerで選択されたrepositoryを代入
         let repo = rootVC.repositoryArray[rootVC.selectedIndex]
         
         languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
@@ -37,6 +38,7 @@ class DetailViewController: UIViewController {
         
     }
     
+    //オーナーの画像取得
     func getOwnerImage(){
         
         let repo = rootVC.repositoryArray[rootVC.selectedIndex]
