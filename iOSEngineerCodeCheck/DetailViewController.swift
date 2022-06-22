@@ -27,8 +27,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        //タイトルの文字数に合わせてフォントサイズを調整
+        //文字数に合わせてフォントサイズを調整
         titleLabel.adjustsFontSizeToFitWidth = true
+        languageLabel.adjustsFontSizeToFitWidth = true
         
         //RootViewControllerで選択されたrepositoryを代入
         let repo = rootVC.repositoryArray[rootVC.selectedIndex]
