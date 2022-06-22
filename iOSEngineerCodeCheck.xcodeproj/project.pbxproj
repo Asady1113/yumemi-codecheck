@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		943FB5B128636A2D00F5B988 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FB5AF28636A2D00F5B988 /* RootTableViewController.swift */; };
-		943FB5B228636A2D00F5B988 /* RootTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943FB5B028636A2D00F5B988 /* RootTableViewController.xib */; };
 		947C99B028635B5B00758679 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947C99AF28635B5B00758679 /* DetailView.xib */; };
 		947C99B228635B7000758679 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C99B128635B7000758679 /* DetailView.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
@@ -40,8 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		943FB5AF28636A2D00F5B988 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
-		943FB5B028636A2D00F5B988 /* RootTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootTableViewController.xib; sourceTree = "<group>"; };
 		947C99AF28635B5B00758679 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		947C99B128635B7000758679 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +87,6 @@
 			children = (
 				947C99AF28635B5B00758679 /* DetailView.xib */,
 				947C99B128635B7000758679 /* DetailView.swift */,
-				943FB5AF28636A2D00F5B988 /* RootTableViewController.swift */,
-				943FB5B028636A2D00F5B988 /* RootTableViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943FB5B228636A2D00F5B988 /* RootTableViewController.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				947C99B028635B5B00758679 /* DetailView.xib in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
@@ -285,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945E3244DC5E80012785A /* RootViewController.swift in Sources */,
-				943FB5B128636A2D00F5B988 /* RootTableViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				947C99B228635B7000758679 /* DetailView.swift in Sources */,
