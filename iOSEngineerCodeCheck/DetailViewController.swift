@@ -26,6 +26,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //文字数に合わせてフォントサイズを調整
+        titleLabel.adjustsFontSizeToFitWidth = true
+        languageLabel.adjustsFontSizeToFitWidth = true
+        
         //RootViewControllerで選択されたrepositoryを代入
         let repo = rootVC.repositoryArray[rootVC.selectedIndex]
         
