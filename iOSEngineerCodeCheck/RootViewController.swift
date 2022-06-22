@@ -12,6 +12,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
     var repositoryArray: [[String: Any]] = []
     
     var searchTask: URLSessionTask?
