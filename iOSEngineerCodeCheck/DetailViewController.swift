@@ -36,12 +36,12 @@ class DetailViewController: UIViewController {
         issueCountLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
         
         
-        getOwnerImage()
+        getOwner()
         
     }
     
-    //オーナーの画像取得
-    func getOwnerImage(){
+    //オーナーを取得
+    func getOwner(){
         
         let repo = rootVC.repositoryArray[rootVC.selectedIndex]
         
@@ -49,20 +49,28 @@ class DetailViewController: UIViewController {
         
         if let owner = repo["owner"] as? [String: Any] {
             
-            if let imgURL = owner["avatar_url"] as? String {
-                
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
-                    
-                    let img = UIImage(data: data!)!
-                    
-                    DispatchQueue.main.async {
-                        self.ownerImageView.image = img
-                    }
-                    
-                }.resume()
-            }
+            getOwnerImage(owner: owner)
+            
         }
         
+    }
+    
+    
+    //オーナーの画像を取得
+    func getOwnerImage(owner: [String: Any]) {
+        
+        if let imgURL = owner["avatar_url"] as? String {
+            
+            URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
+                
+                let img = UIImage(data: data!)!
+                
+                DispatchQueue.main.async {
+                    self.ownerImageView.image = img
+                }
+                
+            }.resume()
+        }
     }
     
 }

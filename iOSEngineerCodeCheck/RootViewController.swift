@@ -49,24 +49,37 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         if searchWord.count != 0 {
             searchUrl = "https://api.github.com/search/repositories?q=\(searchWord!)"
             
-            searchTask = URLSession.shared.dataTask(with: URL(string: searchUrl)!) { (data, result, error) in
-                
-                if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    
-                        if let items = object["items"] as? [[String: Any]] {
-                            self.repositoryArray = items
-                            
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                        }
-                    }
-                }
-        //リクエストを開始するために必要
-        searchTask?.resume()
+            searchRepository(url: searchUrl)
+        
         }
         
     }
+    
+
+    //レポジトリを検索
+    func searchRepository(url: String) {
+
+        searchTask = URLSession.shared.dataTask(with: URL(string: url)!) { (data, result, error) in
+
+            if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
+
+                if let items = object["items"] as? [[String: Any]] {
+                    self.repositoryArray = items
+
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+
+                    }
+
+                }
+            }
+
+        }
+        //リクエストを開始するために必要
+        searchTask?.resume()
+    }
+
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
