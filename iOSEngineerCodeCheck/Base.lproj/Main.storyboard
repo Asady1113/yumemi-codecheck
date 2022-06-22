@@ -54,7 +54,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="ktq-eC-ZBq"/>
                     <connections>
-                        <outlet property="searchBar" destination="6rq-CD-Hob" id="3gq-mK-4M3"/>
+                        <outlet property="searchBar" destination="6rq-CD-Hob" id="i3z-Bt-Ykc"/>
                         <segue destination="AHY-RL-7mG" kind="show" identifier="Detail" id="qqd-8W-4W1"/>
                     </connections>
                 </tableViewController>
@@ -66,7 +66,7 @@
         <scene sceneID="JOC-74-7VT">
             <objects>
                 <viewController id="AHY-RL-7mG" customClass="DetailViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4gp-25-lRZ">
+                    <view key="view" contentMode="scaleToFill" id="4gp-25-lRZ" customClass="DetailView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -159,13 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
-                        <outlet property="forkCountLabel" destination="ZMv-4f-X2V" id="i84-sH-c5t"/>
-                        <outlet property="issueCountLabel" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
-                        <outlet property="languageLabel" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
-                        <outlet property="ownerImageView" destination="Iim-eb-8Ad" id="dmH-tP-ZuI"/>
-                        <outlet property="starsCountLabel" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
-                        <outlet property="titleLabel" destination="4q1-pG-WSB" id="UQ0-5D-rWe"/>
-                        <outlet property="watcherCountLabel" destination="lQC-lo-IqN" id="Drg-Jv-iUh"/>
+                        <outlet property="detailView" destination="4gp-25-lRZ" id="LIv-9a-EZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
