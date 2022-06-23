@@ -8,10 +8,17 @@
 
 import UIKit
 
-class RootViewController: UITableViewController, UISearchBarDelegate {
+
+protocol TransitionProtocol {
+    func performSegue(withIdentifier identifier: String, sender: Any?)
+}
+
+
+class RootViewController: UITableViewController, UISearchBarDelegate,TransitionProtocol {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    lazy var transitioner: TransitionProtocol = self
     
     var repositoryArray: [[String: Any]] = []
     
@@ -113,8 +120,10 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         // タップされたcellの番号を代入
         selectedIndex = indexPath.row
         //画面遷移
-        performSegue(withIdentifier: "Detail", sender: self)
+        transitioner.performSegue(withIdentifier: "Detail", sender: self)
         
     }
     
 }
+
+
