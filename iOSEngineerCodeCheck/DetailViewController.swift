@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     //UIはDetailViewファイルで作成
     @IBOutlet weak var detailView : DetailView!
     
+    var searchTask: URLSessionTask?
+    
     var rootVC: RootViewController!
         
     override func viewDidLoad() {
@@ -53,7 +55,7 @@ class DetailViewController: UIViewController {
         
         if let imgURL = owner["avatar_url"] as? String {
             
-            URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
+            searchTask = URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
                 
                 let img = UIImage(data: data!)!
                 
@@ -61,7 +63,9 @@ class DetailViewController: UIViewController {
                     self.detailView.ownerImageView.image = img
                 }
                 
-            }.resume()
+            }
+            
+            searchTask?.resume()
         }
     }
     
