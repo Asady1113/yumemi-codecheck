@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         //RootViewControllerで選択されたrepositoryを代入
-        repository = rootVC.repositoryArray[rootVC.selectedIndex]
+        repository = rootVC.repositoryArray[rootVC.selectedIndex!]
         
 
         detailView.languageLabel.text = "Written in \(repository.language)"

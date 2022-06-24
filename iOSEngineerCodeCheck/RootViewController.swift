@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 
 protocol TransitionProtocol {
@@ -23,9 +24,9 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
     var repositoryArray = [Repository]()
     
     var searchTask: URLSessionTask?
-    var searchWord: String!
-    var searchUrl: String!
-    var selectedIndex: Int!
+    var searchWord: String?
+    var searchUrl: String?
+    var selectedIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +55,13 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
         searchWord = searchBar.text!
         
         //検索ワードが入っているなら
-        if searchWord.count != 0 {
+        if searchWord?.count != 0 {
+            //検索中は画面を固定する（ボタン連打によるエラーを回避）
+            KRProgressHUD.show()
+            
             searchUrl = "https://api.github.com/search/repositories?q=\(searchWord!)"
             
-            searchRepository(url: searchUrl)
+            searchRepository(url: searchUrl!)
         
         }
         
@@ -77,6 +81,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
         }
         //リクエストを開始するために必要
         searchTask?.resume()
+        
     }
     
     
@@ -96,6 +101,9 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
                             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                
+                //ロードが完成したらHUDを閉じる
+                KRProgressHUD.dismiss()
 
             }
         }
