@@ -8,12 +8,19 @@
 
 import UIKit
 
-class RootViewController: UITableViewController, UISearchBarDelegate {
+
+protocol TransitionProtocol {
+    func performSegue(withIdentifier identifier: String, sender: Any?)
+}
+
+
+class RootViewController: UITableViewController, UISearchBarDelegate,TransitionProtocol {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    lazy var transitioner: TransitionProtocol = self
     
-    var repositoryArray: [[String: Any]] = []
+    var repositoryArray = [Repository]()
     
     var searchTask: URLSessionTask?
     var searchWord: String!
@@ -60,24 +67,38 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
     //レポジトリを検索
     func searchRepository(url: String) {
 
-        searchTask = URLSession.shared.dataTask(with: URL(string: url)!) { (data, result, error) in
+        searchTask = URLSession.shared.dataTask(with: URL(string: url)!) { [self] (data, result, error) in
 
             if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-
-                if let items = object["items"] as? [[String: Any]] {
-                    self.repositoryArray = items
-
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-
-                    }
-
-                }
+                
+                makeRepositoryArray(object: object)
+            
             }
-
         }
         //リクエストを開始するために必要
         searchTask?.resume()
+    }
+    
+    
+    //repositoryArrayを作成
+    func makeRepositoryArray(object: [String: Any]) {
+        //配列を初期化。二重のappendを防ぐ
+        self.repositoryArray = [Repository]()
+
+        if let items = object["items"] as? [[String: Any]] {
+            
+            //itemを一つずつ配列にappendする
+            for item in items {
+                let repository = Repository(json: item)
+                
+                repositoryArray.append(repository)
+            }
+                            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+
+            }
+        }
     }
 
     
@@ -101,8 +122,8 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = UITableViewCell()
         let repo = repositoryArray[indexPath.row]
-        cell.textLabel?.text = repo["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = repo["language"] as? String ?? ""
+        cell.textLabel?.text = repo.fullName
+        cell.detailTextLabel?.text = repo.language
         cell.tag = indexPath.row
         
         return cell
@@ -113,8 +134,10 @@ class RootViewController: UITableViewController, UISearchBarDelegate {
         // タップされたcellの番号を代入
         selectedIndex = indexPath.row
         //画面遷移
-        performSegue(withIdentifier: "Detail", sender: self)
+        transitioner.performSegue(withIdentifier: "Detail", sender: self)
         
     }
     
 }
+
+

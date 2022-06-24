@@ -13,19 +13,24 @@ class DetailViewController: UIViewController {
     //UIはDetailViewファイルで作成
     @IBOutlet weak var detailView : DetailView!
     
+    var searchTask: URLSessionTask?
+    
     var rootVC: RootViewController!
+    
+    var repository : Repository!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //RootViewControllerで選択されたrepositoryを代入
-        let repo = rootVC.repositoryArray[rootVC.selectedIndex]
+        repository = rootVC.repositoryArray[rootVC.selectedIndex]
         
-        detailView.languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
-        detailView.starsCountLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        detailView.watcherCountLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        detailView.forkCountLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        detailView.issueCountLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+
+        detailView.languageLabel.text = "Written in \(repository.language)"
+        detailView.starsCountLabel.text = "\(repository.stargazersCount) stars"
+        detailView.watcherCountLabel.text = "\(repository.watchersCount) watchers"
+        detailView.forkCountLabel.text = "\(repository.forksCount) forks"
+        detailView.issueCountLabel.text = "\(repository.issuesCount) open issues"
         
         
         getOwner()
@@ -35,34 +40,31 @@ class DetailViewController: UIViewController {
     //オーナーを取得
     func getOwner(){
         
-        let repo = rootVC.repositoryArray[rootVC.selectedIndex]
+        detailView.titleLabel.text = repository.fullName
         
-        detailView.titleLabel.text = repo["full_name"] as? String
-        
-        if let owner = repo["owner"] as? [String: Any] {
-            
-            getOwnerImage(owner: owner)
-            
-        }
+        let owner = repository.owner
+        getOwnerImage(owner: owner)
         
     }
     
     
     //オーナーの画像を取得
-    func getOwnerImage(owner: [String: Any]) {
+    func getOwnerImage(owner: Owner) {
         
-        if let imgURL = owner["avatar_url"] as? String {
+        let imgURL = owner.avatorUrl
             
-            URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
-                
-                let img = UIImage(data: data!)!
-                
-                DispatchQueue.main.async {
-                    self.detailView.ownerImageView.image = img
-                }
-                
-            }.resume()
+        searchTask = URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
+            
+            let img = UIImage(data: data!)!
+            
+            DispatchQueue.main.async {
+                self.detailView.ownerImageView.image = img
+            }
+            
         }
+        searchTask?.resume()
+        
     }
     
 }
+
