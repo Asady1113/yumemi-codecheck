@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		947C99B028635B5B00758679 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947C99AF28635B5B00758679 /* DetailView.xib */; };
 		947C99B228635B7000758679 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C99B128635B7000758679 /* DetailView.swift */; };
+		94E0372E286551A7004E9B35 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0372D286551A7004E9B35 /* Repository.swift */; };
+		94E0373128655AF1004E9B35 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0373028655AF1004E9B35 /* Owner.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		947C99AF28635B5B00758679 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		947C99B128635B7000758679 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		94E0372D286551A7004E9B35 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		94E0373028655AF1004E9B35 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		94E0372F286551B6004E9B35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94E0372D286551A7004E9B35 /* Repository.swift */,
+				94E0373028655AF1004E9B35 /* Owner.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +131,9 @@
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E2244DC5E80012785A /* RootViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
-				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				947C99B3286361CF00758679 /* View */,
+				94E0372F286551B6004E9B35 /* Model */,
+				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
@@ -279,9 +293,11 @@
 			files = (
 				BFD945E3244DC5E80012785A /* RootViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
+				94E0373128655AF1004E9B35 /* Owner.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				947C99B228635B7000758679 /* DetailView.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
+				94E0372E286551A7004E9B35 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

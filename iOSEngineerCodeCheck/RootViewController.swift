@@ -20,7 +20,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
     
     lazy var transitioner: TransitionProtocol = self
     
-    var repositoryArray: [[String: Any]] = []
+    var repositoryArray = [Repository]()
     
     var searchTask: URLSessionTask?
     var searchWord: String!
@@ -67,18 +67,25 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
     //レポジトリを検索
     func searchRepository(url: String) {
 
-        searchTask = URLSession.shared.dataTask(with: URL(string: url)!) { (data, result, error) in
+        searchTask = URLSession.shared.dataTask(with: URL(string: url)!) { [self] (data, result, error) in
 
             if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
+                
+                //配列を初期化。二重のappendを防ぐ
+                self.repositoryArray = [Repository]()
 
                 if let items = object["items"] as? [[String: Any]] {
-                    self.repositoryArray = items
-
+                    
+                    for item in items {
+                        let repository = Repository(json: item)
+                        
+                        repositoryArray.append(repository)
+                    }
+                                    
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
 
                     }
-
                 }
             }
 
@@ -108,8 +115,8 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
         
         let cell = UITableViewCell()
         let repo = repositoryArray[indexPath.row]
-        cell.textLabel?.text = repo["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = repo["language"] as? String ?? ""
+        cell.textLabel?.text = repo.fullName
+        cell.detailTextLabel?.text = repo.language
         cell.tag = indexPath.row
         
         return cell
