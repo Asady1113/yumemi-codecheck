@@ -71,27 +71,34 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
 
             if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
                 
-                //配列を初期化。二重のappendを防ぐ
-                self.repositoryArray = [Repository]()
-
-                if let items = object["items"] as? [[String: Any]] {
-                    
-                    for item in items {
-                        let repository = Repository(json: item)
-                        
-                        repositoryArray.append(repository)
-                    }
-                                    
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-
-                    }
-                }
+                makeRepositoryArray(object: object)
+            
             }
-
         }
         //リクエストを開始するために必要
         searchTask?.resume()
+    }
+    
+    
+    //repositoryArrayを作成
+    func makeRepositoryArray(object: [String: Any]) {
+        //配列を初期化。二重のappendを防ぐ
+        self.repositoryArray = [Repository]()
+
+        if let items = object["items"] as? [[String: Any]] {
+            
+            //itemを一つずつ配列にappendする
+            for item in items {
+                let repository = Repository(json: item)
+                
+                repositoryArray.append(repository)
+            }
+                            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+
+            }
+        }
     }
 
     
