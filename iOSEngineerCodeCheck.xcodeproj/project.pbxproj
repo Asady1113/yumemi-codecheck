@@ -141,26 +141,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		947C99B3286361CF00758679 /* View */ = {
+		944E69CF2868767000FBC507 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				947C99AF28635B5B00758679 /* DetailView.xib */,
-				947C99B128635B7000758679 /* DetailView.swift */,
-				944E69C628684ADF00FBC507 /* RootView.swift */,
-				944E69CC28684BA900FBC507 /* RootView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		94E0372F286551B6004E9B35 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				944E69CA28684B0100FBC507 /* RootViewModel.swift */,
 				94E0372D286551A7004E9B35 /* Repository.swift */,
 				94E0373028655AF1004E9B35 /* Owner.swift */,
+				944E69CA28684B0100FBC507 /* RootViewModel.swift */,
 				94E0373F28683ED0004E9B35 /* DetailModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		947C99B3286361CF00758679 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				944E69CC28684BA900FBC507 /* RootView.xib */,
+				944E69C628684ADF00FBC507 /* RootView.swift */,
+				947C99AF28635B5B00758679 /* DetailView.xib */,
+				947C99B128635B7000758679 /* DetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -190,7 +190,7 @@
 			children = (
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				94E0372F286551B6004E9B35 /* Model */,
+				944E69CF2868767000FBC507 /* Model */,
 				947C99B3286361CF00758679 /* View */,
 				944E69CE28686A6400FBC507 /* Controller */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,

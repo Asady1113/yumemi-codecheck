@@ -53,10 +53,9 @@ class RootViewController: UIViewController,UISearchBarDelegate,TransitionProtoco
             rootViewModel.searchRepository(word: word!, tableView: rootView.tableView)
         
         }
-        
-        
     }
    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //DetailViewControllerへの値わたし
@@ -64,7 +63,6 @@ class RootViewController: UIViewController,UISearchBarDelegate,TransitionProtoco
             let detailVC = segue.destination as! DetailViewController
             detailVC.rootVC = rootViewModel
         }
-        
     }
     
     
@@ -81,7 +79,7 @@ class RootViewController: UIViewController,UISearchBarDelegate,TransitionProtoco
         //画面遷移
         transitioner.performSegue(withIdentifier: "Detail", sender: self)
     }
-
+    
 }
 
 

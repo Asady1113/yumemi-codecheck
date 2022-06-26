@@ -99,15 +99,12 @@ class RootViewModel: NSObject,UITableViewDataSource {
         cell.tag = indexPath.row
         
         return cell
-        
     }
     
     
     func didTapTableViewCell(indexPath: IndexPath) {
         // タップされたcellの番号を代入
         selectedIndex = indexPath.row
-        
-        
     }
     
     
