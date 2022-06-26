@@ -159,7 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
-                        <outlet property="detailView" destination="4gp-25-lRZ" id="LIv-9a-EZa"/>
+                        <outlet property="detailView" destination="4gp-25-lRZ" id="jja-Gq-57T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

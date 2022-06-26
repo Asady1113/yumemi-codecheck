@@ -32,7 +32,7 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //初期のテキストを表示
-        searchBar.text = "GitHubのリポジトリを検索できるよー"
+        searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         
         searchBar.delegate = self
     }
