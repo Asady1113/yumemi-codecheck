@@ -55,12 +55,11 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="ktq-eC-ZBq"/>
                     <connections>
                         <outlet property="searchBar" destination="6rq-CD-Hob" id="i3z-Bt-Ykc"/>
-                        <segue destination="AHY-RL-7mG" kind="show" identifier="Detail" id="qqd-8W-4W1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xer-fe-JeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="137"/>
+            <point key="canvasLocation" x="728" y="826"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="JOC-74-7VT">
@@ -175,12 +174,32 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="MOh-CZ-3ki" kind="relationship" relationship="rootViewController" id="tOh-FN-tGd"/>
+                        <segue destination="mLc-vG-CgC" kind="relationship" relationship="rootViewController" id="54h-BN-TQH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scZ-hy-tAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1417" y="137"/>
+            <point key="canvasLocation" x="-1371" y="137"/>
+        </scene>
+        <!--RootViewController-->
+        <scene sceneID="Ev5-qG-Fyb">
+            <objects>
+                <viewController id="mLc-vG-CgC" customClass="RootViewController2" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kmZ-fG-pbu" customClass="RootView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YcT-XF-e1D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="RootViewController" id="P0g-AV-ALB"/>
+                    <connections>
+                        <outlet property="rootView" destination="kmZ-fG-pbu" id="Elf-pK-M6C"/>
+                        <segue destination="AHY-RL-7mG" kind="show" identifier="Detail" id="6p9-X4-NBk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hnu-bU-B88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-584" y="137"/>
         </scene>
     </scenes>
     <resources>

@@ -16,7 +16,7 @@ class DetailModel {
     var repository: Repository!
     
     
-    func showDetail(view: DetailView,rootVC: RootViewController) {
+    func showDetail(view: DetailView,rootVC: RootViewModel) {
         //RootViewControllerで選択されたrepositoryを代入
         repository = rootVC.repositoryArray[rootVC.selectedIndex!]
         

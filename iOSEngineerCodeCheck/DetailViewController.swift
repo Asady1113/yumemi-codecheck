@@ -12,9 +12,11 @@ class DetailViewController: UIViewController {
     
     //UIはDetailViewファイルで作成
     @IBOutlet weak var detailView: DetailView!
+    
+    //ModelはDetailModelファイルで作成
     var detailModel = DetailModel()
     
-    var rootVC: RootViewController!
+    var rootVC: RootViewModel!
    
     override func viewDidLoad() {
         super.viewDidLoad()

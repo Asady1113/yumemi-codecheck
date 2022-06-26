@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		356227C8EA1CF6C4FE204F79 /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4B43703340E6664B4F8482 /* Pods_iOSEngineerCodeCheckTests.framework */; };
 		82359F94D5CA8C7BD859B191 /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555FBF7C8E3910E9D1F5329F /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */; };
+		944E69C328684A9E00FBC507 /* RootViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69C228684A9E00FBC507 /* RootViewController2.swift */; };
+		944E69C728684ADF00FBC507 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69C628684ADF00FBC507 /* RootView.swift */; };
+		944E69CB28684B0100FBC507 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69CA28684B0100FBC507 /* RootViewModel.swift */; };
+		944E69CD28684BA900FBC507 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944E69CC28684BA900FBC507 /* RootView.xib */; };
 		947C99B028635B5B00758679 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947C99AF28635B5B00758679 /* DetailView.xib */; };
 		947C99B228635B7000758679 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C99B128635B7000758679 /* DetailView.swift */; };
 		94E0372E286551A7004E9B35 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0372D286551A7004E9B35 /* Repository.swift */; };
@@ -50,6 +54,10 @@
 		4FB62FE8F1C33D87130CF6BA /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
 		50DA5C459293BC28D8E68097 /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		555FBF7C8E3910E9D1F5329F /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		944E69C228684A9E00FBC507 /* RootViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController2.swift; sourceTree = "<group>"; };
+		944E69C628684ADF00FBC507 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		944E69CA28684B0100FBC507 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		944E69CC28684BA900FBC507 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
 		947C99AF28635B5B00758679 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		947C99B128635B7000758679 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		94E0372D286551A7004E9B35 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -131,6 +139,8 @@
 			children = (
 				947C99AF28635B5B00758679 /* DetailView.xib */,
 				947C99B128635B7000758679 /* DetailView.swift */,
+				944E69C628684ADF00FBC507 /* RootView.swift */,
+				944E69CC28684BA900FBC507 /* RootView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 			children = (
 				94E0372D286551A7004E9B35 /* Repository.swift */,
 				94E0373028655AF1004E9B35 /* Owner.swift */,
+				94E0373F28683ED0004E9B35 /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,8 +183,9 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E2244DC5E80012785A /* RootViewController.swift */,
+				944E69C228684A9E00FBC507 /* RootViewController2.swift */,
+				944E69CA28684B0100FBC507 /* RootViewModel.swift */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
-				94E0373F28683ED0004E9B35 /* DetailModel.swift */,
 				947C99B3286361CF00758679 /* View */,
 				94E0372F286551B6004E9B35 /* Model */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
@@ -311,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				944E69CD28684BA900FBC507 /* RootView.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				947C99B028635B5B00758679 /* DetailView.xib in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
@@ -446,9 +459,12 @@
 				BFD945E3244DC5E80012785A /* RootViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				94E0373128655AF1004E9B35 /* Owner.swift in Sources */,
+				944E69C728684ADF00FBC507 /* RootView.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				947C99B228635B7000758679 /* DetailView.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
+				944E69CB28684B0100FBC507 /* RootViewModel.swift in Sources */,
+				944E69C328684A9E00FBC507 /* RootViewController2.swift in Sources */,
 				94E0372E286551A7004E9B35 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
