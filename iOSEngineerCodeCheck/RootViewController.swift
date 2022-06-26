@@ -72,6 +72,11 @@ class RootViewController: UITableViewController, UISearchBarDelegate,TransitionP
     func searchRepository(url: String) {
 
         searchTask = URLSession.shared.dataTask(with: URL(string: url)!) { [self] (data, result, error) in
+            
+            if error != nil {
+                KRProgressHUD.showError(withMessage: "検索に失敗しました")
+            }
+            
 
             if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
                 

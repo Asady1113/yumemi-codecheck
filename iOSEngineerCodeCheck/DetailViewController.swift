@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class DetailViewController: UIViewController {
     
@@ -54,6 +55,10 @@ class DetailViewController: UIViewController {
         let imgURL = owner.avatorUrl
             
         searchTask = URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
+            
+            if error != nil {
+                KRProgressHUD.showError(withMessage: "検索に失敗しました")
+            }
             
             let img = UIImage(data: data!)!
             
