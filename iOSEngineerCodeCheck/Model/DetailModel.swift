@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 import KRProgressHUD
+import RealmSwift
 
 class DetailModel {
     
     var searchTask: URLSessionTask?
     
     var repository: Repository!
+    
+    var isLiked: Bool!
     
     
     func showDetail(view: DetailView,rootVC: RootViewModel) {
@@ -58,6 +61,32 @@ class DetailModel {
         
     }
     
+    
+    //お気に入りの投稿を読み込む
+    func judgeLikeRepository(button: UIButton) {
+       
+        let realm = try! Realm()
+        let results = realm.objects(LikeRepository.self) as! [LikeRepository]
+        
+        for result in results {
+            
+            //名称が一致していたらいいねされている
+            if result.fullName == repository.fullName {
+                
+                isLiked = true
+                button.titleLabel?.text = "お気に入りを解除"
+            
+            } else {
+                
+                isLiked = false
+                button.titleLabel?.text = "お気に入りに登録"
+                
+            }
+        }
+    }
+    
+    
+   
     
     
     

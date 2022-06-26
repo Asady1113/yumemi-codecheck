@@ -21,10 +21,17 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailView.likeButton.addTarget(self, action: #selector(didTapLikeButton(_:)), for: .touchUpInside)
+       
+        detailModel.judgeLikeRepository(button: detailView.likeButton)
         detailModel.showDetail(view: detailView, rootVC: rootVC)
         detailModel.getOwner(view: detailView)
     }
     
+    @objc func didTapLikeButton(_ sender: UIButton) {
+        
+        
+    }
     
     
 }

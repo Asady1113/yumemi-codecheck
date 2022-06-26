@@ -17,6 +17,7 @@
 		944E69D32868B7C100FBC507 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69D22868B7C100FBC507 /* LikeView.swift */; };
 		944E69D52868B7EF00FBC507 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69D42868B7EF00FBC507 /* LikeViewModel.swift */; };
 		944E69D72868B7FF00FBC507 /* LikeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944E69D62868B7FF00FBC507 /* LikeView.xib */; };
+		944E69D92868C4F500FBC507 /* LikeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69D82868C4F500FBC507 /* LikeRepository.swift */; };
 		947C99B028635B5B00758679 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947C99AF28635B5B00758679 /* DetailView.xib */; };
 		947C99B228635B7000758679 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C99B128635B7000758679 /* DetailView.swift */; };
 		94E0372E286551A7004E9B35 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0372D286551A7004E9B35 /* Repository.swift */; };
@@ -65,6 +66,7 @@
 		944E69D22868B7C100FBC507 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		944E69D42868B7EF00FBC507 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
 		944E69D62868B7FF00FBC507 /* LikeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeView.xib; sourceTree = "<group>"; };
+		944E69D82868C4F500FBC507 /* LikeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRepository.swift; sourceTree = "<group>"; };
 		947C99AF28635B5B00758679 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		947C99B128635B7000758679 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		94E0372D286551A7004E9B35 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				944E69D02868B76C00FBC507 /* LikeViewController.swift */,
+				944E69D82868C4F500FBC507 /* LikeRepository.swift */,
 				944E69D22868B7C100FBC507 /* LikeView.swift */,
 				944E69D62868B7FF00FBC507 /* LikeView.xib */,
 				944E69D42868B7EF00FBC507 /* LikeViewModel.swift */,
@@ -479,6 +482,7 @@
 				944E69C728684ADF00FBC507 /* RootView.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				947C99B228635B7000758679 /* DetailView.swift in Sources */,
+				944E69D92868C4F500FBC507 /* LikeRepository.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				944E69CB28684B0100FBC507 /* RootViewModel.swift in Sources */,
 				944E69D52868B7EF00FBC507 /* LikeViewModel.swift in Sources */,

@@ -13,6 +13,7 @@
                 <outlet property="forkCountLabel" destination="Ldy-TE-wPm" id="Z9a-x9-yjF"/>
                 <outlet property="issueCountLabel" destination="lr0-gp-JGc" id="Hra-dh-Zda"/>
                 <outlet property="languageLabel" destination="gUA-Lq-gbs" id="jmb-sA-Heg"/>
+                <outlet property="likeButton" destination="Utm-Sn-MVp" id="nDy-uz-R48"/>
                 <outlet property="ownerImageView" destination="mjU-1U-IWB" id="GoB-Ov-OpC"/>
                 <outlet property="starsCountLabel" destination="wg7-Sd-aUw" id="xdj-65-Fqz"/>
                 <outlet property="titleLabel" destination="dMF-qP-jlA" id="u2G-ja-70C"/>
@@ -89,6 +90,12 @@
                     <color key="textColor" systemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-Sn-MVp">
+                    <rect key="frame" x="306" y="689" width="67" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

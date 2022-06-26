@@ -21,6 +21,8 @@ class DetailView: UIView {
     @IBOutlet weak var forkCountLabel: UILabel!
     @IBOutlet weak var issueCountLabel: UILabel!
     
+    @IBOutlet weak var likeButton: UIButton!
+    
     required init?(coder: NSCoder) {
             super.init(coder: coder)
 
@@ -37,6 +39,7 @@ class DetailView: UIView {
                 //文字数に合わせてフォントサイズを調整
                 titleLabel.adjustsFontSizeToFitWidth = true
                 languageLabel.adjustsFontSizeToFitWidth = true
+                
             
         }
     
