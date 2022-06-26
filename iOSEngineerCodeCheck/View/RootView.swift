@@ -26,6 +26,9 @@ class RootView: UIView {
                 view.frame = self.bounds
                 self.addSubview(view)
                 
+                //検索時の文頭を小文字に
+                searchBar.autocapitalizationType = .none
+                
         }
     
     }

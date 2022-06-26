@@ -8,20 +8,18 @@
 
 import UIKit
 
-//protocol TransitionProtocol {
-//    func performSegue(withIdentifier identifier: String, sender: Any?)
-//}
+protocol TransitionProtocol {
+    func performSegue(withIdentifier identifier: String, sender: Any?)
+}
 
 
-class RootViewController: UIViewController,UISearchBarDelegate {
+class RootViewController: UIViewController,UISearchBarDelegate,TransitionProtocol {
     
     
     @IBOutlet weak var rootView: RootView!
     var rootViewModel = RootViewModel()
     
-    var tableView: UITableView!
-    
-   // lazy var transitioner: TransitionProtocol
+    lazy var transitioner: TransitionProtocol = self
     
 
     override func viewDidLoad() {
@@ -81,7 +79,7 @@ class RootViewController: UIViewController,UISearchBarDelegate {
         rootViewModel.didTapTableViewCell(indexPath: indexPath)
         rootView.tableView.deselectRow(at: indexPath, animated: true)
         //画面遷移
-        performSegue(withIdentifier: "Detail", sender: self)
+        transitioner.performSegue(withIdentifier: "Detail", sender: self)
     }
 
 }
