@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import KRProgressHUD
 
 class DetailModel {
     
@@ -40,6 +41,11 @@ class DetailModel {
         let imgURL = owner.avatorUrl
             
         searchTask = URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, result, error) in
+            
+            //エラー検出時
+            if error != nil {
+                KRProgressHUD.showError(withMessage: "画像の取得に失敗しました")
+            }
             
             let img = UIImage(data: data!)!
             

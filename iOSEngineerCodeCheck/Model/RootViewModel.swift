@@ -46,6 +46,11 @@ class RootViewModel: NSObject,UITableViewDataSource {
         
         searchTask = URLSession.shared.dataTask(with: URL(string: searchUrl!)!) { [self] (data, result, error) in
 
+            //エラー検出時
+            if error != nil {
+                KRProgressHUD.showError(withMessage: "検索に失敗しました")
+            }
+            
             if let object = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
                 
                 makeRepositoryArray(object: object, tableView: tableView)
