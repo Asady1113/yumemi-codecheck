@@ -13,6 +13,10 @@
 		944E69C728684ADF00FBC507 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69C628684ADF00FBC507 /* RootView.swift */; };
 		944E69CB28684B0100FBC507 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69CA28684B0100FBC507 /* RootViewModel.swift */; };
 		944E69CD28684BA900FBC507 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944E69CC28684BA900FBC507 /* RootView.xib */; };
+		944E69D12868B76C00FBC507 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69D02868B76C00FBC507 /* LikeViewController.swift */; };
+		944E69D32868B7C100FBC507 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69D22868B7C100FBC507 /* LikeView.swift */; };
+		944E69D52868B7EF00FBC507 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944E69D42868B7EF00FBC507 /* LikeViewModel.swift */; };
+		944E69D72868B7FF00FBC507 /* LikeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944E69D62868B7FF00FBC507 /* LikeView.xib */; };
 		947C99B028635B5B00758679 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947C99AF28635B5B00758679 /* DetailView.xib */; };
 		947C99B228635B7000758679 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C99B128635B7000758679 /* DetailView.swift */; };
 		94E0372E286551A7004E9B35 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0372D286551A7004E9B35 /* Repository.swift */; };
@@ -57,6 +61,10 @@
 		944E69C628684ADF00FBC507 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		944E69CA28684B0100FBC507 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		944E69CC28684BA900FBC507 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
+		944E69D02868B76C00FBC507 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		944E69D22868B7C100FBC507 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
+		944E69D42868B7EF00FBC507 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
+		944E69D62868B7FF00FBC507 /* LikeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeView.xib; sourceTree = "<group>"; };
 		947C99AF28635B5B00758679 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		947C99B128635B7000758679 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		94E0372D286551A7004E9B35 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -190,6 +198,10 @@
 			children = (
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+				944E69D02868B76C00FBC507 /* LikeViewController.swift */,
+				944E69D22868B7C100FBC507 /* LikeView.swift */,
+				944E69D62868B7FF00FBC507 /* LikeView.xib */,
+				944E69D42868B7EF00FBC507 /* LikeViewModel.swift */,
 				944E69CF2868767000FBC507 /* Model */,
 				947C99B3286361CF00758679 /* View */,
 				944E69CE28686A6400FBC507 /* Controller */,
@@ -329,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				944E69CD28684BA900FBC507 /* RootView.xib in Resources */,
+				944E69D72868B7FF00FBC507 /* LikeView.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				947C99B028635B5B00758679 /* DetailView.xib in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
@@ -468,7 +481,10 @@
 				947C99B228635B7000758679 /* DetailView.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				944E69CB28684B0100FBC507 /* RootViewModel.swift in Sources */,
+				944E69D52868B7EF00FBC507 /* LikeViewModel.swift in Sources */,
 				944E69C328684A9E00FBC507 /* RootViewController.swift in Sources */,
+				944E69D32868B7C100FBC507 /* LikeView.swift in Sources */,
+				944E69D12868B76C00FBC507 /* LikeViewController.swift in Sources */,
 				94E0372E286551A7004E9B35 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

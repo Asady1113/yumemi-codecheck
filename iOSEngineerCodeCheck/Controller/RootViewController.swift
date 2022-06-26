@@ -19,12 +19,18 @@ class RootViewController: UIViewController,UISearchBarDelegate,TransitionProtoco
     @IBOutlet weak var rootView: RootView!
     var rootViewModel = RootViewModel()
     
+    
+    
     lazy var transitioner: TransitionProtocol = self
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //UIBarButton設置
+        rootView.likeButton = UIBarButtonItem(title: "お気に入り", style: .plain, target: self, action: #selector(likeBarButtonTapped(_:)))
+        self.navigationItem.rightBarButtonItem = rootView.likeButton
+        
+    
         
         rootViewModel.setPlaceholder(rootView: rootView)
         rootView.searchBar.delegate = self
@@ -79,6 +85,15 @@ class RootViewController: UIViewController,UISearchBarDelegate,TransitionProtoco
         //画面遷移
         transitioner.performSegue(withIdentifier: "Detail", sender: self)
     }
+    
+    
+    //お気に入りボタン
+    @objc func likeBarButtonTapped(_ sender: UIBarButtonItem) {
+           
+        transitioner.performSegue(withIdentifier: "Like", sender: nil)
+    }
+    
+    
     
 }
 
