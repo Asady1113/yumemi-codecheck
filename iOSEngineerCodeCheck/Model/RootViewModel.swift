@@ -28,9 +28,6 @@ class RootViewModel: NSObject,UITableViewDataSource {
         rootView.searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
     }
     
-    func resetSearchBar(searchBar: UISearchBar) {
-        searchBar.text = ""
-    }
     
     func cancelSearch() {
         

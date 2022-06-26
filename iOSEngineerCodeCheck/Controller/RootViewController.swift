@@ -13,7 +13,7 @@ import UIKit
 //}
 
 
-class RootViewController2: UIViewController,UISearchBarDelegate {
+class RootViewController: UIViewController,UISearchBarDelegate {
     
     
     @IBOutlet weak var rootView: RootView!
@@ -33,17 +33,12 @@ class RootViewController2: UIViewController,UISearchBarDelegate {
         
         settingTabelView()
         
-        tableView = rootView.tableView
-    }
-    
-    
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓初期のテキストを削除するコード
-        rootViewModel.resetSearchBar(searchBar: searchBar)
         
-        return true
+        //スクロール時にキーボードを閉じる
+        rootView.tableView.keyboardDismissMode = .onDrag
     }
+    
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //テキストが変更されたときはサーチをキャンセルする
@@ -92,7 +87,7 @@ class RootViewController2: UIViewController,UISearchBarDelegate {
 }
 
 
-extension RootViewController2: UITableViewDelegate {
+extension RootViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
